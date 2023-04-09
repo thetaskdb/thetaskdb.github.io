@@ -1,4 +1,2 @@
 # thetaskdb.github.io
-web site
-
-bing
+web site taskdb
