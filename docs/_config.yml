@@ -33,6 +33,21 @@ github_username:  jekyll
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-datapage-generator
+
+permalink: /:categories/:year/:month/:day/:title
+
+#page_gen-dirs: true
+
+page_gen:
+  - data: 'tasks'
+    template: 'task'
+    name_expr: record['Series'] + "-" + record['Episode'] + "-" + record['Code']
+    filter_condition: "record['Description']"
+    dir: 'tasks'
+    
+
+#    source: https://docs.google.com/spreadsheets/d/e/2PACX-1vTRgo6mjEDDPYGbRknb-K29wENzGPNb2c8EX-wnN_0JfKVY6VP5IYKfRhjB7OR2jBB7r9iKcH7e4Ous/pub?gid=0&single=true&output=csv
 
 # Exclude from processing.
 # The following items will not be processed, by default.

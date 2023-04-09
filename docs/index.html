@@ -1,0 +1,41 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+
+<p>SITE </p>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Path </th>
+    <th> URL  </th>
+    <th> ID  </th>
+    <th> collection  </th>
+    <th> dir  </th>
+    <th> Series  </th>
+  </tr>
+{% for row in site.pages %}
+  <tr>
+    <td> {{ row.name }} </td>
+    <td> {{ row.path }} </td>
+    <td> <a href="{{ row.url | link }}" > {{ row.url }} </a> </td>
+    <td> {{ row.id  }} </td>
+    <td> {{ row.collection  }} </td>
+    <td> {{ row.dir  }} </td>
+    <td> {{ row.Series  }} </td>
+  </tr>
+{% endfor %}
+</table>
+
+
+<ul>
+  {%- for row in site.data.tasks -%}
+  {%- assign name = row | slice:0, 6 -%}
+
+    {%- if row['Youtube Link'] -%}
+    <li> {{  row['Series'] | append:  row['Episode'] | append:  row['Code'] }} {{row['Series']}} {{row['Episode']}} {{row['Code']}} </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
